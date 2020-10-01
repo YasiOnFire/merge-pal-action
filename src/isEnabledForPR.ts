@@ -4,6 +4,7 @@ export default function isEnabledForPR(
     whitelist: string[],
     blacklist: string[],
 ) {
+    console.log('whitelist', whitelist);
     if (whitelist.length === 0 && blacklist.length === 0) {
         return true
     }
@@ -16,5 +17,6 @@ export default function isEnabledForPR(
     if (whitelist.length > 0 && matchedWhite.length === 0) {
         return false
     }
+    console.log('whitelist end', labels, matchedWhite);
     return true
 }

@@ -9740,6 +9740,7 @@ function addHook (state, kind, name, hook) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 function isEnabledForPR(pr, whitelist, blacklist) {
+    console.log('whitelist', whitelist);
     if (whitelist.length === 0 && blacklist.length === 0) {
         return true;
     }
@@ -9752,6 +9753,7 @@ function isEnabledForPR(pr, whitelist, blacklist) {
     if (whitelist.length > 0 && matchedWhite.length === 0) {
         return false;
     }
+    console.log('whitelist end', labels, matchedWhite);
     return true;
 }
 exports.default = isEnabledForPR;
