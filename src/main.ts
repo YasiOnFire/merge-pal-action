@@ -9,14 +9,16 @@ export default async function main(core: CoreModule, github: GitHubModule) {
     const token = core.getInput('token')
     const client = new github.GitHub(token)
     const config = readConfig('.mergepal.yml')
-    console.log('config', JSON.stringify(config))
-    console.log('context', JSON.stringify(github.context))
+    // console.log('config', JSON.stringify(config))
+    // console.log('context', JSON.stringify(github.context))
     const event = github.context.eventName
+    console.log('event: ', event);
     switch (event) {
         case 'pull_request':
             await prHandler(client, github.context, config)
             break
         case 'pull_request_target':
+            console.log('prHandler',);
             await prHandler(client, github.context, config)
             break
         case 'status':
