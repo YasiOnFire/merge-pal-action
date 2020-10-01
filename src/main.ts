@@ -16,6 +16,9 @@ export default async function main(core: CoreModule, github: GitHubModule) {
         case 'pull_request':
             await prHandler(client, github.context, config)
             break
+        case 'pull_request_target':
+            await prHandler(client, github.context, config)
+            break
         case 'status':
             await statusHandler(client, github.context, config)
             break

@@ -2021,6 +2021,9 @@ function main(core, github) {
             case 'pull_request':
                 yield prHandler_1.default(client, github.context, config);
                 break;
+            case 'pull_request_target':
+                yield prHandler_1.default(client, github.context, config);
+                break;
             case 'status':
                 yield statusHandler_1.default(client, github.context, config);
                 break;
